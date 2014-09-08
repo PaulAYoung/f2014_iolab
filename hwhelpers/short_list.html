@@ -1,13 +1,21 @@
 <!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>{{ name }}</title>
+        <title>List of Shorts</title>
     </head>
     <body>
-        {% for s in shorts %}
-            {{ s['name'] }}
-            {{ s['producer'] }}
-            {{ s['keywords'] }}
-        {% endfor %}
+        <div class="container">
+            <div class="short-list">
+                
+              {% for s in shorts %}
+                <div class="short-item">
+                  <div class="short-name">{{ s['name'] }}</div>
+                  <div class="short-producer">{{ s['producer'] }}</div>
+                  <div class="short-keywords">{{ s['keywords'] }}</div>
+                </div>
+              {% endfor %}
+                
+            </div>
+        </div>
     </body>
 </html>
