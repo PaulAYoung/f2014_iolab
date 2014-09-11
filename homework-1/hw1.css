@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(230,230,250);
+}
+
+.container{
+    margin:2em 5em;
+    padding: 2em;
+    background-color:white;
+    max-width: 50em;
+}
+
+.header{
+    text-align:center;
+    font-size: 3em;
+    background-color: white;
+}
+
+.short-list{
+    padding: 2em;
+    background-color: rgb(230,230,230);
+}
+
+.short-item:hover{
+	background-color: rgb(100,200,200)
+}
+
+a.unstyled{
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.short-item{
+	margin: 1em;
+	background-color: white;
+}
+
+.short-name{
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: rgb(200,200,220);
+}
+
+.short-producer{
+	text-decoration: inherit;
+}
+
+.video{
+	text-align: center;
+}
+
+.short-keywords{
+	text-decoration: inherit;
+}
+
+.label{
+	font-size: 1.1em;
+	font-weight: bold;
+}
