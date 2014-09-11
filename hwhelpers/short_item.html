@@ -2,10 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>{{ name }}</title>
+        <link type="text/css" rel="stylesheet" href="hw1.css"/>
     </head>
     <body>
-        {{ name }}
-        {{ producer }}
-        {{ keywords }}
+        <div class="container">
+            <a class="unstyled" href="index.html"><div class="header">Stop Motion Videos!</div></a>
+            <div><a href="index.html">Return to list</a></div>
+            <div class="short-name">{{ name }}</div>
+            <div class="video">{{embed}}</div>
+            <div class="short-producer"><span class="label">Producer: </span>{{ producer }}</div>
+            <div class="short-keywords"><span class="label">Keywords: </span>{{ keywords }}</div>
+        </div>
     </body>
 </html>

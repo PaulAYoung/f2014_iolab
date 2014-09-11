@@ -2,17 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>List of Shorts</title>
+        <link type="text/css" rel="stylesheet" href="hw1.css"/>
     </head>
     <body>
         <div class="container">
+            <div class="header">Stop Motion Videos!</div>
             <div class="short-list">
                 
               {% for s in shorts %}
-                <div class="short-item">
-                  <div class="short-name">{{ s['name'] }}</div>
-                  <div class="short-producer">{{ s['producer'] }}</div>
-                  <div class="short-keywords">{{ s['keywords'] }}</div>
-                </div>
+                <a class="unstyled" href="{{ s.link }}.html">
+                    <div class="short-item">
+                      <div class="short-name">{{ s['name'] }}</div>
+                      <div class="short-producer"><span class="label">Producer: </span>{{ s['producer'] }}</div>
+                      <div class="short-keywords"><span class="label">Keywords: </span>{{ s['keywords'] }}</div>
+                    </div>
+                </a>
               {% endfor %}
                 
             </div>
