@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-do List</title>
+    
+    <!-- link to css file -->
+    <link rel="stylesheet" type="text/css" href="_css/style.css" />
+
+    <!-- link to javascript files -->
+    <script src="_js/jquery-1.10.2.min.js"></script>
+    <script src="_js/script.js"></script>    
+</head>
+<body>
+    
+	<div id="container">
+		<h1 class="page-title">Todo List</h1>
+		<div>
+					<!-- form to add an item to the list -->
+			<div class="column item-form">
+				<form id="todo-form">
+				    <label>Add an item</label><br/>
+				    <input name="todo-form-add" id="todo-form-add" type="text" placeholder="New item">
+				    <input type="submit" value="Add Item">
+				</form> 
+			</div>
+	
+			<!-- the to-do list -->
+			<div class="column item-list">
+				<h3>Pending Items</h3>
+				<ul id="todo-list">
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
