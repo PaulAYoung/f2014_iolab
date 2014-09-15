@@ -34,5 +34,8 @@ $(document).ready(function() {
 
         // Make sure the remove button is hooked up
         enable_remove();
+
+        // Reset form
+        e.currentTarget.reset();
     });
 })
