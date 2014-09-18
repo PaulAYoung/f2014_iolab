@@ -1,17 +1,18 @@
 $(document).ready(function() {
     var todo_list = $("#todo-list");
 
+    var geo_loc = false;
     function get_loc(){
         navigator.geolocation.getCurrentPosition(function(pos){
-            return pos;
-        },
-        function(){return false;}
-        );
+            $("#todo-form-text").after(
+                '<br/><label>Include Location:</label><input name="include-loc" id="include-loc" type="checkbox" checked="checked"/>'
+            );
+            geo_loc = pos;
+        });
     }
 
-    var geo_loc = false;
-    geo_loc = get_loc();
-    console.log(geo_loc);
+    get_loc()
+
 
     function enable_remove(){
         $(".todo-list-remove").click(function(e){
@@ -29,15 +30,16 @@ $(document).ready(function() {
         e.preventDefault();
         var item = e.target[0].value;
         var remove_button = '<button class="todo-list-remove">Remove</button>';
+        console.log($("#include-loc"));
 
-        if (e.target[1].checked === true && geo_loc !== false){
+        if ($("#include-loc").is(":checked") === true){
 
-            loc = "<a href='maps.google.com/?q=" +
+            loc = "<a href='http://maps.google.com/?q=" +
                 geo_loc.coords.latitude + "," +
-                geo_loc.coords.longitute +
-                "'>View Location</a>"
+                geo_loc.coords.longitude +
+                "' target='_blank'>View Location</a>"
         } else {
-            loc = "loc not given";
+            loc = "No location given.";
         }
 
 

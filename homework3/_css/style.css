@@ -19,11 +19,20 @@ body{
 
 .item-form{
 	float: right;
+	border-radius: 1em;
+	background: white;
 }
 
 .item-list{
 	float: left;
 	background-color: white;
+	border-radius: 1em;
+}
+
+.item-list ul{
+    list-style-type: none;
+    padding: 0em;
+    margin: 0em;
 }
 
 #todo-form-add{
