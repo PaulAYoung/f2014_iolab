@@ -1,6 +1,18 @@
 $(document).ready(function() {
     var todo_list = $("#todo-list");
 
+    function get_loc(){
+        navigator.geolocation.getCurrentPosition(function(pos){
+            return pos;
+        },
+        function(){return false;}
+        );
+    }
+
+    var geo_loc = false;
+    geo_loc = get_loc();
+    console.log(geo_loc);
+
     function enable_remove(){
         $(".todo-list-remove").click(function(e){
             var item = e.target.parentElement;
@@ -18,10 +30,23 @@ $(document).ready(function() {
         var item = e.target[0].value;
         var remove_button = '<button class="todo-list-remove">Remove</button>';
 
+        if (e.target[1].checked === true && geo_loc !== false){
+
+            loc = "<a href='maps.google.com/?q=" +
+                geo_loc.coords.latitude + "," +
+                geo_loc.coords.longitute +
+                "'>View Location</a>"
+        } else {
+            loc = "loc not given";
+        }
+
+
         // Create dom element for item
         var item_dom = $(
             '<li class="todo-item">' + 
                 item +
+                "<br/>" +
+                loc + 
                 "<br/>" +
                 remove_button + 
             "</li>");
