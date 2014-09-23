@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get USGS Data</title>
+        
+        <!-- link to css file -->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        
+        <!-- javascript -->
+        <script src="jquery-1.10.2.min.js"></script>
+        <script src="code.js"></script>    
+    </head>
+    <body>
+        
+        <div id="container">
+            <h1 class="header">USGS Earthquake Data</h1>
+            <button id="refresh-botton">Refresh Earthquake Data</button>
+            <div class="data-area">
+                <table>
+                       <thead>
+                            <tr>
+                                <th>time</th>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Depth</th>
+                            </tr>
+                       </thead>
+                        <tbody id="earthquake-table">
+                            <tr><td>No Data Loaded</td></tr>                            
+                        </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </body>
+</html>
