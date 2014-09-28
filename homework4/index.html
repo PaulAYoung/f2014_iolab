@@ -8,24 +8,34 @@
         
         <!-- javascript -->
         <script src="jquery-1.10.2.min.js"></script>
-        <script src="code.js"></script>    
+        <script src="code.js"></script>
+        <script>
+            $(document).ready(function() {
+                console.log("binding event");
+                $("#refresh-button").click(function(){
+                    console.log("getting data");
+                    get_data("#earthquake-table > tbody:last");
+                });
+                get_data("#earthquake-table > tbody:last");
+            });
+        </script>
     </head>
     <body>
         
         <div id="container">
             <h1 class="header">USGS Earthquake Data</h1>
-            <button id="refresh-botton">Refresh Earthquake Data</button>
+            <button id="refresh-button">Refresh Earthquake Data</button>
             <div class="data-area">
-                <table>
+                <table id="earthquake-table">
                        <thead>
                             <tr>
-                                <th>time</th>
-                                <th>Longitude</th>
-                                <th>Latitude</th>
-                                <th>Depth</th>
+                                <th>Magnitude</th>
+                                <th>Place</th>
+                                <th>Time</th>
+                                <th>Last Updated</th>
                             </tr>
                        </thead>
-                        <tbody id="earthquake-table">
+                        <tbody>
                             <tr><td>No Data Loaded</td></tr>                            
                         </tbody>
                 </table>
