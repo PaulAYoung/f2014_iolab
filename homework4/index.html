@@ -11,12 +11,9 @@
         <script src="code.js"></script>
         <script>
             $(document).ready(function() {
-                console.log("binding event");
-                $("#refresh-button").click(function(){
-                    console.log("getting data");
-                    get_data("#earthquake-table > tbody:last");
-                });
-                get_data("#earthquake-table > tbody:last");
+                spotter = new EarthquakeSpotter("#data-area",
+                    "http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_hour.geojson");
+                spotter.get_data();
             });
         </script>
     </head>
@@ -24,9 +21,9 @@
         
         <div id="container">
             <h1 class="header">USGS Earthquake Data</h1>
-            <button id="refresh-button">Refresh Earthquake Data</button>
-            <div class="data-area">
-                <table id="earthquake-table">
+            <div id="data-area">
+                <button class="earthquake-refresh-button">Refresh Earthquake Data</button>
+                <table class="earthquake-table">
                        <thead>
                             <tr>
                                 <th>Magnitude</th>

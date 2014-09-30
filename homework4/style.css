@@ -1,9 +1,10 @@
-#earthquake-table {
+.earthquake-table {
     border: 0.2em solid black;
     border-spacing: 0.5em;
     text-align: left;
     border-collapse: collapse;
 }
-#earthquake-table td, th {
+.earthquake-table td, th {
     border: .1em solid black;
+    padding: .3em;
 }
