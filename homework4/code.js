@@ -1,11 +1,26 @@
-function EarthquakeSpotter(domid, data_url){
-    if (typeof(data_url)==='undefined'){data_url="http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_hour.geojson"}
+function EarthquakeSpotter(domid, options){
+    /*
+        Pulls earthquake data from specified source and displays in table. 
 
-    this.data_url = data_url;
+        domid - the div where data should be displayed. 
+        options - object with following properties:
+            data_url: main data source
+            backup_url: backup datasource
+     */
+
+    this.data_url = options.data_url;
+    this.backup_url = options.backup_url;
     this.root = $(domid);
     this.data_table = this.root.find(".earthquake-table > tbody:last");
 
-    this.root.find(".earthquake-refresh-button").click($.proxy(this.get_data, this));
+    this.root.find(".earthquake-refresh-button").click(
+            $.proxy(function(){
+                this.get_data();
+            }, this));
+}
+
+EarthquakeSpotter.prototype.set_message = function(message){
+    this.root.find(".earthquake-message").text(message);
 }
 
 EarthquakeSpotter.prototype.add_data_item = function(feature){
@@ -36,22 +51,41 @@ EarthquakeSpotter.prototype.format_date =  function(date){
     return m + "/" + d + "/" + y + " " + t;
 }
 
-EarthquakeSpotter.prototype.get_data =  function(){
-    data_table = this.data_table;
-    $.ajax(this.data_url,
+EarthquakeSpotter.prototype.get_data =  function(data_url){
+    if (typeof(data_url) === 'undefined'){data_url = this.data_url;}
+    $.ajax(data_url,
         {
             context: this,
             success: function(d){
                 var features = d.features;
+                if (d.features.length > 0){
+                    this.set_message("Earthquake data fetched at " + this.format_date(new Date()));
+                    // clear table
+                    this.data_table.children().remove();
 
-                // clear table
-                this.data_table.children().remove();
+                    // Add new content
+                    for (var idx=0; idx< features.length; idx ++){
+                        this.add_data_item(features[idx]);
+                    }
 
-                // Add new content
-                for (var idx=0; idx< features.length; idx ++){
-                    this.add_data_item(features[idx], data_table);
+                    return;
+                } else if (data_url !== this.backup_url){
+                    this.set_message("No data for last hour, fetching for last day.")
+                    this.get_data(this.backup_url);
+                }else{
+                    this.set_message("No earthquakes found in last day... good or ominous?")
+                    this.data_table.children().remove();
+                    this.data_table.append("<tr><ti>No quakes!</ti></tr>")
                 }
+            },
+            error: function(){
+                if (data_url !== this.backup_url){
+                    this.get_data(this.backup_url);
+                }else{
+                    this.data_table.children().remove();
+                    this.data_table.append("<tr><ti>Error Retrieving data!</ti></tr>")
+                }
+           }
             }
-        }
         );
 }

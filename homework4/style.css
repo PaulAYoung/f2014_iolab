@@ -1,10 +1,8 @@
-.earthquake-table {
-    border: 0.2em solid black;
-    border-spacing: 0.5em;
-    text-align: left;
-    border-collapse: collapse;
+
+body, .container {
+    background: none repeat scroll 0 0 #27213c;
 }
-.earthquake-table td, th {
-    border: .1em solid black;
-    padding: .3em;
+.header {
+    text-align: center;
+    color: #FFFFFF;
 }
