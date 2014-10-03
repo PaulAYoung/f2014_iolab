@@ -1,0 +1,65 @@
+/* content */
+
+body{
+	background-color: rgb(200,200,200);
+}
+
+#container {
+	margin: 40px auto;
+	overflow: hidden;
+	max-width: 800px;
+	min-height: 80%;
+}
+
+.column {
+	margin: 1em;
+	padding: 1em;
+	width: 40%;
+}
+
+.item-form{
+	float: right;
+	border-radius: 1em;
+	background: white;
+}
+
+.item-list{
+	float: left;
+	background-color: white;
+	border-radius: 1em;
+}
+
+.item-list ul{
+    list-style-type: none;
+    padding: 0em;
+    margin: 0em;
+}
+
+#todo-form-add{
+	width: 90%;
+	height: 3em;
+}
+
+.todo-item{
+	margin: .5em;
+	padding: 1em;
+	border-color: black;
+	border-style: solid;
+	border-radius: 1em;
+	text-align: left;
+	clear: both;
+}
+
+.item-text{
+	float: left;
+	margin: 0 .25em;
+	width: 90%;
+	word-wrap: break-word;
+}
+
+.todo-list-remove{
+}
+
+.page-title{
+	text-align: center;
+}
