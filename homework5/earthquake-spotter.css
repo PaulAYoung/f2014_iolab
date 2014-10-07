@@ -1,0 +1,44 @@
+
+.earthquake-container {
+    background: none repeat scroll 0 0 #cbcfc9;
+    border-radius: 1.5em;
+    margin: 0 auto;
+    padding: 0 1em 1.5em;
+    min-width: 40em;
+    max-width: 60em;
+}
+.earthquake-table {
+    border: 0.2em solid black;
+    border-collapse: collapse;
+    border-spacing: 0.5em;
+    clear: both;
+    text-align: left;
+    width: 100%;
+}
+.earthquake-table td, th {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 0.1em solid black;
+    padding: 0.3em;
+}
+.eathquake-place {
+    width: 40%;
+}
+.eathquake-magnitude, .earthquek-time, .earthquake-update {
+    width: 20%;
+}
+.earthquake-controls {
+    margin: 1em;
+    padding: 1em 0;
+}
+.earthquake-refresh-button {
+    float: left;
+}
+.earthquake-message {
+    float: right;
+}
+
+.earthquake-maparea{
+    height: 400px;
+    clear: both;
+    width: 800px;
+}
