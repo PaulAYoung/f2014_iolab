@@ -37,8 +37,13 @@
     float: right;
 }
 
+.earthquake-table tbody{
+    cursor: pointer;
+}
+
 .earthquake-maparea{
     height: 400px;
     clear: both;
     width: 800px;
+    margin: 1em;
 }

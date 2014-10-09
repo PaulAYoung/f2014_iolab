@@ -1,0 +1,27 @@
+{
+  "name": "f2014_iolab",
+  "version": "1.0.0",
+  "description": "Class work for iolab 2014",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulAYoung/f2014_iolab.git"
+  },
+  "author": "Paul Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulAYoung/f2014_iolab/issues"
+  },
+  "homepage": "https://github.com/PaulAYoung/f2014_iolab",
+  "dependencies": {
+    "d3": "^3.4.12",
+    "jquery": "^2.1.1",
+    "leaflet": "^0.7.3"
+  }
+}
