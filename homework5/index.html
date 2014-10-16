@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get USGS Data</title>
+        
+        <!-- link to css file -->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="earthquake-spotter.css" />
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <!-- javascript -->
+        <script src="code.js"></script>
+        <script>
+            $(document).ready(function() {
+                spotter = new EarthquakeSpotter("#data-area",
+                    {
+                        data_url:"http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_hour.geojson",
+                        backup_url:"http://io.milowski.com/usgs/earthquakes/feed/v1.0/summary/all_day.geojson"
+                    });
+            
+                spotter.get_data();
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1 class="header">USGS Earthquake Data</h1>
+            <div id="data-area" class="earthquake-container">
+                <div class="earthquake-controls">
+                    <button class="earthquake-refresh-button">Refresh Earthquake Data</button>
+                    <div class="earthquake-message"></div>
+                </div>
+                <br/>
+                <div class="earthquake-maparea"></div>
+                <span>Earthquake list (click to pan):</span>
+                <table class="earthquake-table">
+                    <colgroup class="eathquake-magnitude"/>
+                    <colgroup class="eathquake-place"/>
+                    <colgroup class="eathquake-time"/>
+                    <colgroup class="eathquake-update"/>
+                    <thead>
+                        <tr>
+                            <th>Magnitude</th>
+                            <th>Place</th>
+                            <th>Time</th>
+                            <th>Last Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>No Data Loaded</td></tr>                            
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
