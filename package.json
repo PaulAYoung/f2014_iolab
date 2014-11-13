@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/PaulAYoung/f2014_iolab",
   "dependencies": {
-    "d3": "^3.4.12",
+    "d3": "^3.4.13",
     "jquery": "^2.1.1",
-    "leaflet": "^0.7.3"
+    "leaflet": "^0.7.3",
+    "mongoose": "^3.8.18"
   }
 }
