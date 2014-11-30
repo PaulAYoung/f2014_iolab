@@ -1,0 +1,33 @@
+Assignment:  Get Setup!
+Due: 09-04
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-1.xhtml
+Assignment: Back to the Future with CSS3
+Due: 09-11
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-2.xhtml
+Assignment: Scripting - To do? Or not TO DO?!
+Due: 09-25
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-3.xhtml
+Assignment: Accessing USGS Earthquake Data
+Due: 10-02
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-4.xhtml
+Assignment: Mapping Earthquakes
+Due: 10-09
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-5.xhtml
+Assignment: Triples in a Haystack
+Due: 10-30
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-6.xhtml
+Assignment: Querying Shakespeare
+Due: 11-25
+Site: http://courses.ischool.berkeley.edu/i290ta/f14/homework-7.xhtml
+Presentation: Your Pitches (P1)
+Date: 09-16
+Presentation: Your Pitches (P1)
+Date: 09-18
+Presentation: Your Pitches (P1)
+Date: 09-16
+Presentation: Mockup (P2)
+Date: 10-09
+Presentation: Information Design (P3)
+Date: 10-30
+Presentation: Implementation Updates (P4) and Fire Fighting
+Date: 11-25
