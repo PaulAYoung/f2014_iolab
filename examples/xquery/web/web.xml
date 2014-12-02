@@ -13,16 +13,17 @@
         the content element to switch over to the plays with namespaces.  Just make 
         sure to comment out the other one. -->
    <application name="shakespeare">
-      <!-- Namespace
+      
       <content match="/" href="../shakespeare/ns/">
          <parameter name="method" value="GET"/>
          <parameter name="method" value="HEAD"/>
       </content>
-      -->
+      <!-- Namespace
       <content match="/" href="../shakespeare/">
          <parameter name="method" value="GET"/>
          <parameter name="method" value="HEAD"/>
       </content>
+      -->
    </application>
    
    <!-- This is the main server configuration -->
