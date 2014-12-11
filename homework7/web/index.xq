@@ -1,20 +1,20 @@
 declare namespace html = "http://www.w3.org/1999/xhtml";
-declare namespace my = "http://www.example.com";
-
-declare function my:title($e as node()) as xs:string {
-    $e/PLAY/TITLE
-};
+declare namespace s = "http://www.ibiblio.org/xml/examples/shakespeare/";
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Plays</title>
     </head>
       <body>
-          <div>
+        <h1>Shakespeare's Plays</h1>
+          <ul>
               {
               for $li in /html:ul/html:li
-                return <p>{my:title(doc(resolve-uri($li/html:a/@href,base-uri(/))))}</p>
+                let $href := fn:string($li/html:a/@href),
+                    $base := fn:substring-before($href,'.xml'),
+                    $play := doc(resolve-uri($href,base-uri(/)))
+                return <li><a href="{$base}/">{fn:string($play/s:PLAY/s:TITLE)}</a></li>
               }
-          </div>
+          </ul>
       </body>
 </html>
